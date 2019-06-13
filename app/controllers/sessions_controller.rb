@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @login = Login.find_by(username: params[:username])
+    @user = User.find_by(username: params[:username])
     if @login.authenticate(params[:password])
       redirect_to secure_path, notice: "Success"
     else
