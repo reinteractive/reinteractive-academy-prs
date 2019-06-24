@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe CustomersController, type: :controller do
 
-  describe "GET #welcomes" do
+  describe "GET #index" do
     it "returns http success" do
-      get :welcomes
+      get :index
       expect(response).to have_http_status(:success)
     end
   end
