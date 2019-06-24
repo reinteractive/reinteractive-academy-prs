@@ -1,2 +1,14 @@
-<h1>Customers#welcomes</h1>
-<p>Find me in app/views/customers/welcomes.html.erb</p>
+
+
+<%= form_for @customer do |f| %>
+
+<H1>Enter Your Email</H1>
+
+<div class="field">
+	<%= f.label :email  %>
+	<%= f.text_field :email  %>
+</div>
+
+<%= f.submit %>
+	
+<% end %> 
