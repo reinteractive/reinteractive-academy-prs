@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
 
   root 'welcome#index'
-  resources :customers, only: [:create]
+    resources :customers, only: [:create] do 
+      resources :ideas, only: [:create, :show]
+
+    end
 
   get "/verify/:token", to: "verifications#create"
   # resources :verifications, only: [:create], path: "/verify", as: :verify
