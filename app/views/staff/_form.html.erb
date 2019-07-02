@@ -1,0 +1,27 @@
+<div class="card">
+  <form>
+    <div class="card-body">
+      <div class="row">
+        <div class="col form-group">
+          <label for="exampleText1">First Name</label>
+          <input type="text" id="exampleText1" class="form-control" placeholder="Tsutsui">
+        </div>
+        <div class="col form-group">
+          <label for="exampleText2">Last Name</label>
+          <input type="text" id="exampleText2" class="form-control" placeholder="Ichiha">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleEmail">Email</label>
+        <input type="email" id="exampleEmail" class="form-control" placeholder="tsutsui@example.com">
+      </div>
+    </div>
+    <div class="card-footer bg-white">
+      <div class="text-right">
+        <%= link_to "Cancel", staff_index_path, class: "btn btn-light" %>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </form>
+</div>

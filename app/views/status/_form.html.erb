@@ -1,0 +1,34 @@
+<div class="card">
+  <form>
+    <div class="card-body">
+
+      <div class="form-group">
+        <label for="select1">Status</label>
+        <select class="custom-select" id="select1">
+          <option value="1" selected>PLANNED</option>
+          <option value="2">RELEASE</option>
+          <option value="3">BUILDING</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleTextarea">Your Message</label>
+        <textarea id="exampleTextarea" class="form-control"></textarea>
+      </div>
+
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+        <label class="custom-control-label" for="customSwitch1">
+          <strong>Notify your customers</strong><br>
+          Send an email notification to your customers about this status
+        </label>
+      </div>
+    </div>
+    <div class="card-footer bg-white">
+      <div class="text-right">
+        <%= link_to "Cancel", ideas_path, class: "btn btn-light" %>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-white border-bottom">
+  <div class="container">
+    <%= link_to ideas_path, class: "navbar-brand" do %>
+      New Idea
+    <% end %>
+  </div>
+</nav>
+
+<section class="container my-4">
+  <div class="row">
+    <div class="col-8">
+      <%= render "form", page: "new" %>
+    </div>
+
+    <div class="col">
+      <div class="border-bottom">
+        <%= render "categories" %>
+      </div>
+    </div>
+  </div>
+</section>

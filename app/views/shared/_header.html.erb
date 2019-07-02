@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "sprout-logo.svg", alt: "Sprout" %>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+      <div class="navbar-nav mr-auto">
+        <% if header_type == "admin" %>
+          <%= active_link_to dashboard_index_path, class: "nav-item nav-link", active: :exact do %>
+            Dashboard <span class="sr-only">(current)</span>
+          <% end %>
+          <%= active_link_to feedback_index_path, class: "nav-item nav-link" do %>
+            Feedback
+          <% end %>
+          <%= active_link_to ideas_path, class: "nav-item nav-link" do %>
+            Ideas
+          <% end %>
+          <%= active_link_to category_index_path, class: "nav-item nav-link" do %>
+            Categories
+          <% end %>
+          <%= active_link_to customer_index_path, class: "nav-item nav-link" do %>
+            Customers
+          <% end %>
+          <%= active_link_to staff_index_path, class: "nav-item nav-link" do %>
+            Staff
+          <% end %>
+        <% end %>
+      </div>
+
+      <span class="navbar-text">
+        <%= link_to dashboard_index_path, class: "nav-item nav-link" do %>
+          demo@example.com
+        <% end %>
+      </span>
+    </div>
+  </div>
+</nav>

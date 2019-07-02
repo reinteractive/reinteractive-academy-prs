@@ -1,0 +1,57 @@
+<nav class="navbar navbar-light bg-white border-bottom">
+  <div class="container">
+    <%= link_to ideas_path, class: "navbar-brand" do %>
+      Edit Idea
+    <% end %>
+  </div>
+</nav>
+
+<section class="container my-4">
+  <div class="row">
+    <div class="col-8">
+      <%= render "form", page: "edit" %>
+      <div class="mt-4">
+        <%= render "feedback" %>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="border-bottom">
+        <%= render "meta" %>
+      </div>
+
+      <div class="my-3">
+        <p class="d-flex justify-content-between">
+          <strong>Status</strong>
+          <%= link_to "Change status", edit_status_path(1) %>
+        </p>
+        <p class="text-secondary p-2 bg-white border">
+          <i class="fas fa-circle"></i> UNDER REVIEW
+        </p>
+      </div>
+
+      <div class="border-bottom my-3">
+        <%= render "categories" %>
+      </div>
+
+      <div>
+        <p><strong>Customer Impact</strong></p>
+        <div class="row">
+          <div class="col p-2 bg-white border text-center">
+            <h3>8</h3>
+            <small class="text-muted">NICE-TO-HAVE</small>
+          </div>
+          <div class="col p-2 mx-2 bg-white border text-center">
+            <h3>7</h3>
+            <small class="text-muted">IMPORTANT</small>
+          </div>
+          <div class="col p-2 border border-danger text-center"
+              style="background:#FEEBED;">
+            <h3>32</h3>
+            <small class="text-danger">CRITICAL</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

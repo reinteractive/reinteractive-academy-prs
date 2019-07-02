@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light bg-white border-bottom">
+  <div class="container">
+    <%= link_to customer_index_path, class: "navbar-brand" do %>
+      Customers
+    <% end %>
+    <%= link_to new_customer_path, class: "btn btn-primary" do %>
+      <i class="fas fa-plus"></i> Add Customer
+    <% end %>
+  </div>
+</nav>
+
+<section class="container my-4">
+  <table class="table border bg-white">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Feedback</th>
+        <th scope="col">Votes</th>
+        <th scope="col">Last Activity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="d-flex align-items-center" scope="row">
+          <div class="bg-secondary text-white text-center rounded p-1 mr-2"
+               style="width:30px;">
+            LM
+          </div>
+          <%= link_to "Lucy Miller", edit_customer_path(1), class: "text-dark" %>
+        </th>
+        <td>lucy.miller@example.com</td>
+        <td>3</td>
+        <td>10</td>
+        <td>2 months ago</td>
+      </tr>
+      <tr>
+        <th class="d-flex align-items-center" scope="row">
+          <div class="bg-success text-white text-center rounded p-1 mr-2"
+               style="width:30px;">
+            HI
+          </div>
+          <%= link_to "Henry Itondo", edit_customer_path(1), class: "text-dark" %>
+        </th>
+        <td>henry1990@example.com</td>
+        <td>1</td>
+        <td>3</td>
+        <td>4 months ago</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

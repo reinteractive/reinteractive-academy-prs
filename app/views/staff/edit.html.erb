@@ -1,0 +1,29 @@
+<nav class="navbar navbar-light bg-white border-bottom">
+  <div class="container">
+    <%= link_to staff_index_path, class: "navbar-brand" do %>
+      Staff
+    <% end %>
+  </div>
+</nav>
+
+<section class="container my-4">
+  <div class="row">
+    <div class="col-8">
+      <%= render "form" %>
+    </div>
+
+    <div class="col">
+      <div class="border-bottom">
+        <p><strong>Meta</strong></p>
+        <p>
+          <i class="fas fa-clock mr-2"></i>
+          Added 2 hours ago
+        </p>
+        <p>
+          <i class="fas fa-ticket-alt mr-2"></i>
+          ID: 5665
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

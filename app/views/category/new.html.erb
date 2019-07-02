@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light bg-white border-bottom">
+  <div class="container">
+    <%= link_to category_index_path, class: "navbar-brand mr-auto" do %>
+      New Category
+    <% end %>
+  </div>
+</nav>
+
+<section class="container my-4">
+  <%= render "form" %>
+</section>

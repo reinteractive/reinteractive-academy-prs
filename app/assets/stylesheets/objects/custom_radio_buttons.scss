@@ -1,0 +1,50 @@
+.form-check {
+  .form-check-input {
+    &:checked + .form-check-label {
+      &.btn.btn-info {
+        background-color: $cyan;
+        border-color: $cyan;
+        color: $white;
+      }
+      &.btn.btn-warning {
+        background-color: $yellow;
+        border-color: $yellow;
+        color: $body-color;
+      }
+      &.btn.btn-danger {
+        background-color: $red;
+        border-color: $red;
+      }
+    }
+  }
+  .form-check-label {
+    cursor: pointer;
+    &.btn.btn-info {
+      background-color: $gray-300;
+      border-color: $gray-300;
+      &:hover, &:focus, &:active {
+        background-color: $cyan;
+        border-color: $cyan;
+        color: $white;
+      }
+    }
+    &.btn.btn-warning {
+      background-color: $gray-500;
+      border-color: $gray-500;
+      color: $white;
+      &:hover, &:focus, &:active {
+        background-color: $yellow;
+        border-color: $yellow;
+        color: $body-color;
+      }
+    }
+    &.btn.btn-danger {
+      background-color: $gray-600;
+      border-color: $gray-600;
+      &:hover, &:focus, &:active {
+        background-color: $red;
+        border-color: $red;
+      }
+    }
+  }
+}

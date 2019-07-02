@@ -1,0 +1,39 @@
+<form>
+  <div class="card-footer d-flex flex-wrap align-items-center justify-content-between">
+    <legend style="font-size:1rem;width:auto;"><strong>How important is this to you?</strong></legend>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input d-none" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" data-toggle="collapse" data-target="#feedbackForm" aria-expanded="false" aria-controls="feedbackForm">
+      <label class="form-check-label btn btn-info" for="inlineRadio1">NICE-TO-HAVE</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input d-none" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" data-toggle="collapse" data-target="#feedbackForm" aria-expanded="false" aria-controls="feedbackForm">
+      <label class="form-check-label btn btn-warning" for="inlineRadio2">IMPORTANT</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input d-none" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" data-toggle="collapse" data-target="#feedbackForm" aria-expanded="false" aria-controls="feedbackForm">
+      <label class="form-check-label btn btn-danger" for="inlineRadio3">CRITICAL</label>
+    </div>
+  </div>
+
+  <div class="collapse" id="feedbackForm">
+    <div class="card-body bg-light">
+      <div class="form-group">
+        <label for="exampleText1">Why do you need this?</label>
+        <textarea id="exampleText1" class="form-control" rows="8" placeholder="(Any context you provide will help us make this product better for you)"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleEmail">Email</label>
+        <input type="email" id="exampleEmail" class="form-control" placeholder="lucy.miller@example.com">
+      </div>
+    </div>
+    <div class="card-footer bg-white">
+      <div class="text-right">
+        <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#feedbackForm">
+          Cancel
+        </button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</form>

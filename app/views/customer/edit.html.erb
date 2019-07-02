@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-white border-bottom">
+  <div class="container">
+    <%= link_to customer_index_path, class: "navbar-brand" do %>
+      Customer
+    <% end %>
+  </div>
+</nav>
+
+<section class="container my-4">
+  <div class="row">
+    <div class="col-8">
+      <%= render "form" %>
+      <%= render "feedback" %>
+    </div>
+
+    <div class="col">
+      <div class="border-bottom">
+        <%= render "meta" %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<table class="table border bg-white mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Feedback</th>
+      <th scope="col">Created</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="align-middle">
+        <%= image_tag "icons/angry", alt: "angry emoji", width: 28, height: 28, class: "mr-1" %>
+        <%= link_to feedback_path(1), class: "text-dark" do %>
+          Sometimes a user will submit feedback, however there isn't enough...
+        <% end %>
+      </td>
+      <td>
+        2 hours ago
+      </td>
+    </tr>
+
+    <tr>
+      <td class="align-middle">
+        <%= image_tag "icons/smile", alt: "smile emoji", width: 28, height: 28, class: "mr-1" %>
+        <%= link_to feedback_path(1), class: "text-dark" do %>
+          Sometimes a user will submit feedback, however there isn't enough...
+        <% end %>
+      </td>
+      <td>
+        8 hours ago
+      </td>
+    </tr>
+
+    <tr>
+      <td class="align-middle">
+        <%= image_tag "icons/smile", alt: "smile emoji", width: 28, height: 28, class: "mr-1" %>
+        <%= link_to feedback_path(1), class: "text-dark" do %>
+          Sometimes a user will submit feedback, however there isn't enough...
+        <% end %>
+      </td>
+      <td>
+        3 months ago
+      </td>
+    </tr>
+  </tbody>
+</table>

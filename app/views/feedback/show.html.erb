@@ -1,0 +1,43 @@
+<%= render "subnav" %>
+
+<section class="container my-4">
+  <div class="row">
+    <div class="col-8">
+      <div class="card mb-3 rounded-0">
+        <div class="card-body">
+          <p>Sometimes when the customers submit a vote, they don't provide enough information. It could be helpful to be able to ask for more details or otherwise reply directly to a user's idea, feedback, or request.</p>
+        </div>
+        <div class="mt-4 mb-0 rounded-0 alert alert-danger" role="alert">
+          <%= image_tag "icons/angry", alt: "angry emoji", width: 28, height: 28, class: "mr-1" %>
+          <span class=" align-middle">Text analysis suggests Lucy was <strong>angry</strong> when providing this feedback</span>
+        </div>
+      </div>
+
+      <div class="rounded-0 alert alert-warning" role="alert">
+        <%= image_tag "icons/smile", alt: "smile emoji", width: 28, height: 28, class: "mr-1" %>
+        <span class=" align-middle">Text analysis suggests Lucy was <strong>happy</strong> when providing this feedback</span>
+      </div>
+
+      <div class="rounded-0 alert alert-secondary" role="alert">
+        <%= image_tag "icons/scared", alt: "scared emoji", width: 28, height: 28, class: "mr-1" %>
+        <span class=" align-middle">Text analysis suggests Lucy was <strong>fearful</strong> when providing this feedback</span>
+      </div>
+
+      <div class="rounded-0 alert alert-info" role="alert">
+        <%= image_tag "icons/sad", alt: "sad emoji", width: 28, height: 28, class: "mr-1" %>
+        <span class=" align-middle">Text analysis suggests Lucy was <strong>sad</strong> when providing this feedback</span>
+      </div>
+
+      <div class="rounded-0 alert alert-success" role="alert">
+        <%= image_tag "icons/suprised", alt: "suprised emoji", width: 28, height: 28, class: "mr-1" %>
+        <span class=" align-middle">Text analysis suggests Lucy was <strong>suprised</strong> when providing this feedback</span>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="border-bottom">
+        <%= render "meta" %>
+      </div>
+    </div>
+  </div>
+</section>

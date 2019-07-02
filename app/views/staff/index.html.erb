@@ -1,0 +1,50 @@
+<nav class="navbar navbar-light bg-white border-bottom">
+  <div class="container">
+    <%= link_to staff_index_path, class: "navbar-brand" do %>
+      Staff
+    <% end %>
+    <%= link_to new_staff_path, class: "btn btn-primary" do %>
+      <i class="fas fa-plus"></i> Add Staff
+    <% end %>
+  </div>
+</nav>
+
+<section class="container my-4">
+  <table class="table border bg-white">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Last Sign in</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="d-flex align-items-center" scope="row">
+          <div class="bg-success text-white text-center rounded p-1 mr-2"
+               style="width:30px;">
+            TI
+          </div>
+          <%= link_to edit_staff_path(1), class: "text-dark" do %>
+            Tsutsui Ichiha
+          <% end %>
+        </th>
+        <td>tsutsui@example.com</td>
+        <td>2 months ago</td>
+      </tr>
+      <tr>
+        <th class="d-flex align-items-center" scope="row">
+          <div class="bg-info text-white text-center rounded p-1 mr-2"
+               style="width:30px;">
+            SY
+          </div>
+          <%= link_to edit_staff_path(1), class: "text-dark" do %>
+            Sang Young-Il
+          <% end %>
+        </th>
+        <td>sang@example.com</td>
+        <td>4 months ago</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

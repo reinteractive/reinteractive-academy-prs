@@ -1,0 +1,30 @@
+<div class="card">
+  <form>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="exampleTextarea">Attach feedback</label>
+        <textarea id="exampleTextarea" class="form-control" placeholder="Enter feedback"></textarea>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">
+          <span class="text-orange"><i class="fas fa-circle"></i> BUILDING</span>
+          Communicate with customers on the portal
+        </label>
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck2">
+        <label class="form-check-label" for="exampleCheck2">
+          <span class="text-info"><i class="fas fa-circle"></i> PLANNED</span>
+          Feedback visible on the portal
+        </label>
+      </div>
+    </div>
+    <div class="card-footer bg-white">
+      <div class="text-right">
+        <%= link_to "Cancel", feedback_index_path, class: "btn btn-light" %>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </form>
+</div>

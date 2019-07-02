@@ -1,0 +1,55 @@
+<nav class="navbar navbar-light bg-white border-bottom">
+  <div class="container">
+    <%= link_to ideas_path, class: "navbar-brand mr-auto" do %>
+      Ideas
+    <% end %>
+    <%= link_to new_idea_path, class: "btn btn-primary" do %>
+      <i class="fas fa-plus"></i> New Idea
+    <% end %>
+  </div>
+</nav>
+
+<section class="container my-4">
+  <table class="table border bg-white">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Status</th>
+        <th scope="col">Nice</th>
+        <th scope="col">Important</th>
+        <th scope="col">Critical</th>
+        <th scope="col">Votes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <%= link_to edit_idea_path(1), class: "text-dark" do %>
+            Social login for public ideaboard
+          <% end %>
+        </th>
+        <td class="text-info">
+          <i class="fas fa-circle"></i> PLANNED
+        </td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th scope="row">
+          <%= link_to edit_idea_path(1), class: "text-dark" do %>
+            Custom statuses
+          <% end %>
+        </th>
+        <td class="text-success">
+          <i class="fas fa-circle"></i> RELEASE
+        </td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

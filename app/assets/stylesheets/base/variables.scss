@@ -1,0 +1,24 @@
+// Overriding variables from: https://github.com/twbs/bootstrap-rubygem/blob/master/assets/stylesheets/bootstrap/_variables.scss
+
+// Colours
+$red:       #FF2638;
+$orange:    #F7B84F;
+$yellow:    #FCEF03;
+$cyan:      #72D4F9;
+$green:     #A7E56D;
+$teal:      #25CE7B;
+$purple:    #A872F9;
+
+$primary:    $teal;
+$secondary:  $purple;
+
+$body-bg:    #FAFAF9;
+$body-color: #4D5D67;
+
+$border-color:  #E9E9E9;
+
+$font-family-sans-serif: "Helvetica Neue", Arial, sans-serif;
+
+.text-orange {
+  color: $orange;
+}
