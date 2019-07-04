@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_04_002805) do
+ActiveRecord::Schema.define(version: 2019_07_04_013612) do
 
   create_table "feedbacks", force: :cascade do |t|
     t.integer "feedback_status"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_07_04_002805) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last_name"
   end
 
 end
