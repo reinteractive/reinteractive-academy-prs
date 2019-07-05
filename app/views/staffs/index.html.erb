@@ -1,17 +1,17 @@
 <nav class="navbar navbar-light bg-white border-bottom">
   <div class="container">
-    <%= link_to staff_index_path, class: "navbar-brand" do %>
+    <%= link_to staffs_path, class: "navbar-brand" do %>
     Staff
     <% end %>
 
     <%= link_to new_staff_path, class: :"btn btn-primary" do %>
-     <i class="fas fa-plus"></i> Add Staff
+    <i class="fas fa-plus"></i> Add Staff
     <% end %>
   </div>
 </nav>
 
 <section class="container my-4">
-  
+
   <table class="table border bg-white">
     <thead>
       <tr>
@@ -20,12 +20,12 @@
       </tr>
     </thead>
 
-   
-  
-  
+
+
+
     <tbody>
       <tr>
-         <% @staffs.each do |staff| %>
+        <% @staffs.each do |staff| %>
         <th class="d-flex align-items-center" scope="row">
           <div class="bg-success text-white text-center rounded p-1 mr-2"
             style="width:30px;">
@@ -54,5 +54,5 @@
   </table>
 
 
-  
+
 </section>

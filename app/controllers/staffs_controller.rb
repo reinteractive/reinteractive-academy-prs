@@ -1,4 +1,4 @@
-class StaffController < ApplicationController
+class StaffsController < ApplicationController
   def index
     @staffs = Staff.all
   end

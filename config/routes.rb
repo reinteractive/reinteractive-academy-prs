@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :ideas,     :only => [:index, :edit, :new]
   resources :feedback,  :only => [:index, :show, :new]
   resources :portal,    :only => [:index]
-  resources :staff,     :only => [:create, :index, :new, :edit, :update]
+  resources :staffs,    :only => [:create, :index, :new, :edit, :update]
   resources :status,    :only => [:edit]
 
   root "portal#index"
