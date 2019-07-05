@@ -1,26 +1,32 @@
 <div class="card">
-  <form>
-    <div class="card-body">
-      <div class="row"></div>
-      <%= form_for @staff do |f| %>
-        <div class="col form-group">
-          <%= f.text_field :name, class: :"form-control" %> 
-        </div>
-        <div class="col form-group">
-          <%= f.text_field :last_name, class: :"form-control" %>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="exampleEmail">Email</label>
-        <input type="email" id="exampleEmail" class="form-control"
-          placeholder="tsutsui@example.com">
-      </div>
+  <%= form_for @staff do |f| %>
+  <div class="card-body">
+    <div class="row"></div>
+    <div class="col form-group">
+      <%= f.label :name, "First Name" %>
+      <%= f.text_field :name, class: :"form-control" %>
     </div>
-    <div class="card-footer bg-white">
-      <div class="text-right">
-          <%= f.submit class: :"btn btn-primary" %>
-      </div>
-        <% end %>
+    <div class="col form-group">
+      <%= f.label :last_name, "Last Name" %>
+      <%= f.text_field :last_name, class: :"form-control" %>
     </div>
-  </form>
+  </div>
+  <div class="form-group">
+    <%# <%= f.label :email, "Email Address", :class=>'exampleEmail' %>
+    <%# <%= f.text_field :email, :class=>'exampleEmail' %>
+    <label for="exampleEmail">Email</label>
+    <input type="email" id="exampleEmail" class="form-control"
+      placeholder="tsutsui@example.com">
+  </div>
 </div>
+<div class="card-footer bg-white">
+  <div class="text-right">
+    <%= f.submit "ddd" %>
+  </div>
+
+</div>
+<% end %>
+</div>
+
+
+hello

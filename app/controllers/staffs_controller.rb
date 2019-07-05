@@ -10,10 +10,8 @@ class StaffsController < ApplicationController
 def create
   @staff = Staff.new(staff_params)
   if @staff.save
-    flash[:success] = "Staff saved"
-    redirect_to @staff
+    redirect_to action: "index"
   else
-    flash[:error] = "Something went wrong"
     render 'new'
   end
 end
@@ -26,7 +24,7 @@ end
 
 
     def update
-      @staff = Staff.find(staff_params)
+      @staff = Staff.new(staff_params)
         if @staff.update_attributes(params[:id])
           flash[:success] = "Staff was successfully updated"
           redirect_to @staff
