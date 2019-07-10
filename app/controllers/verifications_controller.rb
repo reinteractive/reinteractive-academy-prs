@@ -1,0 +1,5 @@
+class VerificationsController < ApplicationController
+
+
+  
+end
