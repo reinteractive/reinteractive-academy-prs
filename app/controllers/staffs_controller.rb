@@ -21,18 +21,28 @@ end
     @staff = Staff.find(params[:id])
   end
 
-
+    # def update
+    #   @staff = Staff.find(staff_params)
+    #     if @staff.update(params[:staff_id])
+    #       flash[:success] = "Staff was successfully updated"
+    #       redirect_to @staff
+    #     else
+    #       flash[:error] = "Something went wrong"
+    #       render 'edit'
+    #     end
+    # end
 
     def update
-      @staff = Staff.new(staff_params)
-        if @staff.update_attributes(params[:id])
-          flash[:success] = "Staff was successfully updated"
-          redirect_to @staff
-        else
-          flash[:error] = "Something went wrong"
-          render 'edit'
-        end
+       @staff = Staff.find(params[:id])
+      if @staff.update_attributes(staff_params)
+        redirect_to staffs_path
+      else
+        render action: 'edit'
+      end
     end
+
+
+    
   
   def show
     # @staff = Staff.find(params[:id])
