@@ -21,16 +21,6 @@ end
     @staff = Staff.find(params[:id])
   end
 
-    # def update
-    #   @staff = Staff.find(staff_params)
-    #     if @staff.update(params[:staff_id])
-    #       flash[:success] = "Staff was successfully updated"
-    #       redirect_to @staff
-    #     else
-    #       flash[:error] = "Something went wrong"
-    #       render 'edit'
-    #     end
-    # end
 
     def update
        @staff = Staff.find(params[:id])
@@ -41,15 +31,9 @@ end
       end
     end
 
-
-    
-  
   def show
     # @staff = Staff.find(params[:id])
   end
-
-
-
   private
 
   def staff_params
