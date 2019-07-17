@@ -1,10 +1,10 @@
 <nav class="navbar navbar-light bg-white border-bottom">
   <div class="container">
     <%= link_to customer_index_path, class: "navbar-brand" do %>
-      Customers
+    Customers
     <% end %>
     <%= link_to new_customer_path, class: "btn btn-primary" do %>
-      <i class="fas fa-plus"></i> Add Customer
+    <i class="fas fa-plus"></i> Add Customer
     <% end %>
   </div>
 </nav>
@@ -22,30 +22,28 @@
     </thead>
     <tbody>
       <tr>
+        <% @customers.each do |customer| %>
         <th class="d-flex align-items-center" scope="row">
-          <div class="bg-secondary text-white text-center rounded p-1 mr-2"
-               style="width:30px;">
-            LM
+          <div class="bg-success text-white text-center rounded p-1 mr-2"
+            style="width:30px;">
+            TI
           </div>
-          <%= link_to "Lucy Miller", edit_customer_path(1), class: "text-dark" %>
+          <%= link_to customer.name, edit_customer_path(customer), class: "text-dark" %>
+          <% end %>
         </th>
-        <td>lucy.miller@example.com</td>
-        <td>3</td>
-        <td>10</td>
+        <td>tsutsui@example.com</td>
         <td>2 months ago</td>
       </tr>
       <tr>
         <th class="d-flex align-items-center" scope="row">
-          <div class="bg-success text-white text-center rounded p-1 mr-2"
-               style="width:30px;">
-            HI
+          <div class="bg-info text-white text-center rounded p-1 mr-2"
+            style="width:30px;">
+            SY
           </div>
-          <%= link_to "Henry Itondo", edit_customer_path(1), class: "text-dark" %>
+          <%= link_to edit_customer_path(1), class: "text-dark" do %>
+          Sang Young-Il
+          <% end %>
         </th>
-        <td>henry1990@example.com</td>
-        <td>1</td>
-        <td>3</td>
-        <td>4 months ago</td>
       </tr>
     </tbody>
   </table>

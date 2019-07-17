@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :category,  :only => [:index, :new]
-  resources :customer,  :only => [:index, :edit, :new]
+  resources :customer,  :only => [:create, :index, :edit, :update, :new]
   resources :dashboard, :only => [:index]
   resources :ideas,     :only => [:index, :edit, :new]
   resources :feedback,  :only => [:index, :show, :new]
@@ -8,20 +8,18 @@ Rails.application.routes.draw do
   resources :staffs,    :only => [:create, :index, :new, :edit, :update]
   resources :status,    :only => [:edit]
 
-
-scope module: 'users' do
-    resources :customer,  :only => [:index, :edit, :new]
-
-    resources :staffs,    :only => [:create, :index, :new, :edit, :update]
-  end
+# scope module: 'users' do
+#    resources :customer,  :only => [:index, :edit, :new]
+#    resources :staffs,    :only => [:create, :index, :new, :edit, :update]
+# end
 
 
-  scope module: 'functionality' do  
-    resources :ideas,     :only => [:index, :edit, :new]
-    resources :feedback,  :only => [:index, :show, :new]
+  # scope module: 'functionality' do  
+  #   resources :ideas,     :only => [:index, :edit, :new]
+  #   resources :feedback,  :only => [:index, :show, :new]
 
-    resources :status,    :only => [:edit]
-  end
+  #   resources :status,    :only => [:edit]
+  # end
 
 
 
@@ -31,10 +29,7 @@ scope module: 'users' do
 
   
 
-
   # resources :verifications, path: '/verify', as: :foo  
-  
- 
   # resources :verifications, path: '/verify', as: :foo  
 
   # get "/hello", to: "foo#bar"
