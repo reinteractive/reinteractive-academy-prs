@@ -31,12 +31,12 @@ end
   end
 
   def show
-    # @idea = idea.find(params[:id])
+    @idea = idea.find(params[:id])
   end
   private
 
   def idea_params
-    params.require(:idea).permit(:name, :last_name)
+    params.require(:idea).permit(:description)
   end
 end
 
