@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :category,  :only => [:index, :new]
+  resources :category,  :only => [:create, :index, :edit, :update, :new]
   resources :customer,  :only => [:create, :index, :edit, :update, :new]
   resources :dashboard, :only => [:index]
   resources :ideas,     :only => [:index, :edit, :new]
