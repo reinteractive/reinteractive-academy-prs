@@ -1,3 +1,4 @@
+require 'faker'
 Customer.delete_all
 Staff.delete_all
 
@@ -40,9 +41,9 @@ Status.delete_all
 
    
   (rand(0..2)).times do
-    Idea.create!(title:         Faker::Internet.user_name,
-                   details:     Faker::Lorem.sentence,
-                   customer_id: customer.id
+    Idea.create!(title: Faker::Internet.title,
+                  details: Faker::Lorem.sentence,
+                  staff_id: staff.id
         
   (rand(0..2)).times do
      Feedback.create!(feedback: Faker::Lorem.sentence

@@ -1,11 +1,10 @@
 <nav class="navbar navbar-light bg-white border-bottom">
   <div class="container">
-    <%= link_to ideas_path, class: "navbar-brand" do %>
-      Edit Idea
+    <%= link_to edit_idea_path(@idea), class: "navbar-brand" do %>
+    Edit Idea
     <% end %>
   </div>
 </nav>
-
 <section class="container my-4">
   <div class="row">
     <div class="col-8">
@@ -14,12 +13,10 @@
         <%= render "feedback" %>
       </div>
     </div>
-
     <div class="col">
       <div class="border-bottom">
         <%= render "meta" %>
       </div>
-
       <div class="my-3">
         <p class="d-flex justify-content-between">
           <strong>Status</strong>
@@ -46,7 +43,7 @@
             <small class="text-muted">IMPORTANT</small>
           </div>
           <div class="col p-2 border border-danger text-center"
-              style="background:#FEEBED;">
+            style="background:#FEEBED;">
             <h3>32</h3>
             <small class="text-danger">CRITICAL</small>
           </div>

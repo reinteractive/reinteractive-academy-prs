@@ -13,7 +13,7 @@
   <table class="table border bg-white">
     <thead>
       <tr>
-        <th scope="col">Title</th>
+        <div scope="col">Title</div>
         <th scope="col">Status</th>
         <th scope="col">Nice</th>
         <th scope="col">Important</th>
@@ -23,11 +23,14 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">
-          <%= link_to edit_idea_path(1), class: "text-dark" do %>
-          Social login for public ideaboard
+        <% @ideas.each do |i| %>
+        <th class="d-flex align-items-center" scope="row">
+          <div class="bg-success text-white text-center rounded p-1 mr-2"
+            style="width:30px;">
+            TI
+          </div>
+          <%= link_to i.title, edit_idea_path(i), class: "text-dark" %>
           <% end %>
-        </th>
         <td class="text-info">
           <i class="fas fa-circle"></i> PLANNED
         </td>
