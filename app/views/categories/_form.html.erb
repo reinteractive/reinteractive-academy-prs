@@ -1,0 +1,29 @@
+<%= form_for @category do |f| %>
+<div class="card">
+  <div class="card-body">
+    <div class="row"></div>
+    <div class="col form-group">
+      <%= f.label :name, "First Name" %>
+      <%= f.text_field :name, class: :"form-control" %>
+    </div>
+    <div class="col form-group">
+      <%#= f.label :last_name, "Last Name" %>
+      <%#= f.text_field :last_name, class: :"form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%# <%= f.label :email, "Email Address", :class=>'exampleEmail' %>
+    <%# <%= f.text_field :email, :class=>'exampleEmail' %>
+    <label for="exampleEmail">Email</label>
+    <input type="email" id="exampleEmail" class="form-control"
+      placeholder="tsutsui@example.com">
+  </div>
+</div>
+<div class="card-footer bg-white">
+  <div class="text-right">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+
+</div>
+<% end %>
+</div>
