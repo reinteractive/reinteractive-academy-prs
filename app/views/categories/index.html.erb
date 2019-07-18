@@ -20,6 +20,15 @@
     </thead>
     <tbody>
       <tr>
+        <% @categories.each do |c| %>
+        <th class="d-flex align-items-center" scope="row">
+          <div class="bg-success text-white text-center rounded p-1 mr-2"
+            style="width:30px;">
+            TI
+          </div>
+          <%= c.name %>
+          <% end %>
+
         <th scope="row">Feature Requests</th>
         <td>6</td>
         <td>2 months ago</td>
