@@ -19,6 +19,8 @@ end
 
   def edit
     @idea = Idea.find(params[:id])
+    @staff = Staff.all
+    # @staff_collection_on_idea = 
   end
 
   def update

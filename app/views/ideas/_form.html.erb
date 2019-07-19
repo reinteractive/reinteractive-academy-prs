@@ -11,12 +11,23 @@
     </div>
     <% end %>
     <div class="form-group">
+      <%# @staff_collection_on_idea.each do |s| %>
+
+      <%#= form_for @idea do |f| %>
       <label for="select2">Assigned to</label>
       <select class="custom-select" id="select2">
+
+        <p><%#= s.attr %></p>"
+
+
+        <%#= collection_select method, collection, value_method, text_method %>
+
+
         <option value="1" selected>Kendasha Wood</option>
         <option value="2">John Doe</option>
         <option value="3">Jane Doe</option>
       </select>
+
     </div>
     <%= form_for @idea do |f| %>
     <div class="form-group">
