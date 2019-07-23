@@ -21,12 +21,12 @@ class IdeasController < ApplicationController
 
   def edit
     @idea = Idea.find(params[:id])
-    @staff = Staff.find(params[:id])
+    @staff = Staff.all
   end
 
   def update
     @idea = Idea.find(params[:id])
-     @staffs = Staff.find(params[:staff])
+     @staffs = Staff.all
     @staff = @idea.staffs.build
     if @idea.update_attributes(idea_params) && @staff.update_attributes(staff_params)
       render action: 'index'

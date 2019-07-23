@@ -23,9 +23,10 @@ Idea.delete_all
                                 # invitation_accepted_at: Faker::Date.between(200.days.ago, Date.today))
 
 2.times do
-  staff = Staff.create!(name: Faker::Name.name)
-                                # email: Faker::Internet.free_email,
-                                # password: 'hello123',
+  staff = Staff.create!(name: Faker::Name.first_name,
+                        last_name: Faker::Name.last_name,
+                        email: Faker::Internet.free_email,
+                        password: 'hello123')
                                 # bio: Faker::Company.catch_phrase,
                                 # sign_in_count: Faker::Number.number(2),
                                 # current_sign_in_at: Faker::Time.between(2.days.ago, Time.now),
