@@ -26,9 +26,9 @@ class IdeasController < ApplicationController
 
   def update
     @idea = Idea.find(params[:id])
-     @staffs = Staff.find(params[:staff])
+    #  @staffs = Staff.find(params[:staff])
     @staff = @idea.staffs.build
-    if @idea.update_attributes(idea_params) && @staff.update_attributes(staff_params)
+    if @idea.update_attributes(idea_params)
       render action: 'index'
     else
       render 'edit'
