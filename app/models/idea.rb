@@ -4,6 +4,6 @@ class Idea < ApplicationRecord
   belongs_to :staff, class_name: "Idea", optional: true
 
   
-  accepts_nested_attributes_for :staffs
+  accepts_nested_attributes_for :staff
 
 end

@@ -1,5 +1,5 @@
 class Staff < ApplicationRecord
-  has_many :ideas
+belongs_to :idea, class_name: "Idea", optional: true
 
 
 

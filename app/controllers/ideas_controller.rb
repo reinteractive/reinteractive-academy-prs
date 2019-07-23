@@ -26,9 +26,9 @@ class IdeasController < ApplicationController
 
   def update
     @idea = Idea.find(params[:id])
-    #  @staffs = Staff.find(params[:staff])
+     @staffs = Staff.find(params[:staff])
     @staff = @idea.staffs.build
-    if @idea.update_attributes(idea_params)
+    if @idea.update_attributes(idea_params) && @staff.update_attributes(staff_params)
       render action: 'index'
     else
       render 'edit'
@@ -48,6 +48,6 @@ class IdeasController < ApplicationController
   end
 
   def idea_params
-    params.require(:idea).permit(:title, staffs_attributes: [ :name])
+    params.require(:idea).permit(:title, staff_attributes: [:name])
   end
 end
