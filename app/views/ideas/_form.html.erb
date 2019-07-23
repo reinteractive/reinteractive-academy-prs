@@ -1,44 +1,38 @@
 <div class="card">
-  <div class="card-body">
-    <% if page == "new" %>
-    <div class="form-group">
-      <label for="select1">Initial status</label>
-      <select class="custom-select" id="select1">
-        <option value="1" selected>PLANNED</option>
-        <option value="2">RELEASE</option>
-        <option value="3">BUILDING</option>
-      </select>
+  <form>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="select1">Initial Status</label>
+        <select class="custom-select" id="select1">
+          <option value="1" selected>PLANNED</option>
+          <option value="2">RELEASE</option>
+          <option value="3">BUILDING</option>
+        </select>
+      </div>
+      <div class="select2">Assigned to</div>
+      <div class="custom-select">
+        <%= form_for @idea do |f| %>
+        <%= f.fields_for :staffs do |fs| %>
+        <%= fs.text_field :name %>
+        <% end %>
+
+      </div>
+
+      <div <div class="form-group">
+        <label for="exampleTextarea">Description</label>
+        <%= f.text_field :title, class:"form-control" %>
+      </div>
     </div>
-    <% end %>
-    <div class="form-group">
-      <%# @staff_collection_on_idea.each do |s| %>
-
-      <%#= form_for @idea do |f| %>
-      <label for="select2">Assigned to</label>
-      <select class="custom-select" id="select2">
-
-        <p><%#= s.attr %></p>"
 
 
-        <%#= collection_select method, collection, value_method, text_method %>
-
-
-        <option value="1" selected>Kendasha Wood</option>
-        <option value="2">John Doe</option>
-        <option value="3">Jane Doe</option>
-      </select>
-
+    <div class="card-footer bg-white">
+      <div class="text-right">
+        <%= link_to "Cancel", ideas_path, class: "btn btn-light" %>
+        <%= f.submit %>
+      </div>
+      <% end %>
     </div>
-    <%= form_for @idea do |f| %>
-    <div class="form-group">
-      <%= f.label :description, "Description" %>
-      <%= f.text_field :description, class: :"form-control" %>
-    </div>
-  </div>
-  <div class="card-footer bg-white">
-    <div class="text-right">
-      <%= f.submit class: "btn btn-primary" %>
-    </div>
-  </div>
-  <% end %>
+  </form>
 </div>
+
+v
