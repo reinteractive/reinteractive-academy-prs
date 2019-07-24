@@ -37,6 +37,6 @@ end
   private
 
   def staff_params
-    params.require(:staff).permit(:name, :last_name)
+    params.require(:staff).permit(:name, :last_name, :email)
   end
 end
