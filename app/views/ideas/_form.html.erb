@@ -1,30 +1,26 @@
 <div class="card">
-  <form>
-    <div class="card-body">
-      <div class="form-group">
-        <label for="select1">Initial Status</label>
-        <select class="custom-select" id="select1">
-          <option value="1" selected>PLANNED</option>
-          <option value="2">RELEASE</option>
-          <option value="3">BUILDING</option>
-        </select>
-      </div>
-      <div class="select2">Assigned to</div>
-      <%= form_for @idea do |f| %>
-      <%= f.collection_select :staff_id, Staff.all, :id, :name,{}, class: "form-control" %>
-      <div class="form-group">
-        <label for="exampleTextarea">Description</label>
-        <%= f.text_field :title, class:"form-control" %>
-      </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="select1">Initial Status</label>
+      <select class="custom-select" id="select1">
+        <option value="1" selected>PLANNED</option>
+        <option value="2">RELEASE</option>
+        <option value="3">BUILDING</option>
+      </select>
     </div>
-    <div class="card-footer bg-white">
-      <div class="text-right">
-        <%= link_to "Cancel", ideas_path, class: "btn btn-light" %>
-        <%= f.submit %>
-      </div>
-      <% end %>
+    <div class="select2">Assigned to</div>
+    <%= form_for @idea do |f| %>
+    <%= f.collection_select :staff_id, Staff.all, :id, :name,{}, class: "form-control" %>
+    <div class="form-group">
+      <label for="exampleTextarea">Description</label>
+      <%= f.text_field :title, class:"form-control" %>
     </div>
-  </form>
+  </div>
+  <div class="card-footer bg-white">
+    <div class="text-right">
+      <%= link_to "Cancel", ideas_path, class: "btn btn-light" %>
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
 </div>
-
-v
