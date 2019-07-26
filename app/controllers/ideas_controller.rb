@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+app/views/ideas/_form.html.erb# frozen_string_literal: true
 
 class IdeasController < ApplicationController
   def index
@@ -36,13 +36,13 @@ class IdeasController < ApplicationController
   #   end
 
     def update
-    @idea = Idea.find(params[:id])
-      if @idea.update(idea_params)
-        redirect_to ideas_path
-      else
-        render 'edit'
+      @idea = Idea.find(params[:id])
+        if @idea.update(idea_params)
+          redirect_to ideas_path
+        else
+          render 'edit'
       end
-  end
+    end
 
 
 

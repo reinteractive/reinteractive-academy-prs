@@ -4,6 +4,7 @@
     <div class="form-group">
       <label for="select1">Initial Status</label>
       <select class="custom-select" id="select1">
+        <%= f.collection_select :status_id, Status.all, :id, :name,{}, class: "custom-select" %>
         <option value="1" selected>PLANNED</option>
         <option value="2">RELEASE</option>
         <option value="3">BUILDING</option>
