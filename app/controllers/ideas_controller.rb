@@ -1,4 +1,4 @@
-app/views/ideas/_form.html.erb# frozen_string_literal: true
+# frozen_string_literal: true
 
 class IdeasController < ApplicationController
   def index

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :feedback,  only: %i[index show new]
   resources :portal,    only: [:index]
   resources :staffs,    only: %i[create index new edit update]
-  resources :status,    only: [:edit]
+  resources :statuses,    only: [:edit]
 
   get '/idea_staffs', to: 'idea#staff'
 
