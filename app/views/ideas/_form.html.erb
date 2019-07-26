@@ -3,13 +3,12 @@
   <div class="card-body">
     <div class="form-group">
       <label for="select1">Initial Status</label>
-      <select class="custom-select" id="select1">
-        <%= f.collection_select :status_id, Status.all, :id, :name,{}, class: "custom-select" %>
-        <option value="1" selected>PLANNED</option>
-        <option value="2">RELEASE</option>
-        <option value="3">BUILDING</option>
-      </select>
+      <%= f.collection_select :status_id, Status.all, :id, :stage,{}, class: "form-control" %>
+      <div class="form-group">
+        <%= f.text_field :statuses, class:"form-control" %>
+      </div>
     </div>
+
     <div class="select2">Assigned to</div>
     <%= f.collection_select :staff_id, Staff.all, :id, :name,{}, class: "form-control" %>
     <div class="form-group">

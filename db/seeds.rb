@@ -5,7 +5,7 @@ Staff.delete_all
 
 Idea.delete_all
 # Feedback.delete_all
-# Status.delete_all
+Status.delete_all
 
 
 2.times do
@@ -39,8 +39,8 @@ Idea.delete_all
                           
    
   # (rand(0..2)).times do
-  #   Idea.create!(title: Faker::Company.catch_phrase,
-  #                 idea_id: idea.id)
+  #   Status.create!(stage: "#{}"status.id,
+  #                  status_id: idea.id)
 
   (rand(0..2)).times do
     Staff.create!(name: Faker::Name.name,
@@ -65,7 +65,7 @@ Idea.delete_all
     #         end
     #       end
     #     end
-    #   end
+      # end
     end
   end
 end
