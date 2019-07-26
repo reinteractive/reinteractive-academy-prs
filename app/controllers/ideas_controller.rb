@@ -24,15 +24,27 @@ class IdeasController < ApplicationController
     @staffs = Staff.all
   end
 
-  def update
-    @idea = Idea.find(params[:id]) 
-    @staffs = Staff.all
-      if @idea.update_attributes(idea_params)
+  # def update
+  #   @idea = Idea.find(params[:id]) 
+  #   @staffs = Staff.all
+
+  #     if @idea.update_attributes(idea_params)
+  #       redirect_to ideas_path
+  #     else
+  #       render "edit"
+  #     end
+  #   end
+
+    def update
+    @idea = Idea.find(params[:id])
+      if @idea.update(idea_params)
         redirect_to ideas_path
       else
-        render "edit"
+        render 'edit'
       end
-    end
+  end
+
+
 
   def show
     @idea = idea.find(params[:id])
@@ -42,6 +54,6 @@ class IdeasController < ApplicationController
 
 
   def idea_params
-    params.require(:idea).permit(:title, staff_attributes: [:name, :last_name, :email])
+    params.require(:idea).permit(:title, :staff_id, :description)
   end
 end

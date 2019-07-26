@@ -1,4 +1,5 @@
 <div class="card">
+  <%= form_for @idea do |f| %>
   <div class="card-body">
     <div class="form-group">
       <label for="select1">Initial Status</label>
@@ -9,18 +10,58 @@
       </select>
     </div>
     <div class="select2">Assigned to</div>
-    <%= form_for @idea do |f| %>
     <%= f.collection_select :staff_id, Staff.all, :id, :name,{}, class: "form-control" %>
     <div class="form-group">
       <label for="exampleTextarea">Description</label>
       <%= f.text_field :title, class:"form-control" %>
     </div>
   </div>
+
+
+
+
   <div class="card-footer bg-white">
     <div class="text-right">
       <%= link_to "Cancel", ideas_path, class: "btn btn-light" %>
       <%= f.submit %>
     </div>
-    <% end %>
   </div>
+</div>
+<% end %>
+</div>
+
+
+<div class="card">
+  <form>
+    <div class="card-body">
+      <% if page == "new" %>
+      <div class="form-group">
+        <label for="select1">Initial status</label>
+        <select class="custom-select" id="select1">
+          <option value="1" selected>PLANNED</option>
+          <option value="2">RELEASE</option>
+          <option value="3">BUILDING</option>
+        </select>
+      </div>
+      <% end %>
+      <div class="form-group">
+        <label for="select2">Assigned to</label>
+        <select class="custom-select" id="select2">
+          <option value="1" selected>Kendasha Wood</option>
+          <option value="2">John Doe</option>
+          <option value="3">Jane Doe</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleTextarea">Description</label>
+        <textarea id="exampleTextarea" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="card-footer bg-white">
+      <div class="text-right">
+        <%= link_to "Cancel", ideas_path, class: "btn btn-light" %>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </form>
 </div>
