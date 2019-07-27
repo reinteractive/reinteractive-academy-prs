@@ -38,9 +38,12 @@ Status.delete_all
                                 # invitation_accepted_at: Faker::Date.between(200.days.ago, Date.today)
                           
    
-  # (rand(0..2)).times do
-  #   Status.create!(stage: "#{}"status.id,
-  #                  status_id: idea.id)
+  (rand(0..2)).times do
+    Status.create!(stage: (rand(0..2)).times do
+        planned: 0,
+        release: 1,
+        building: 2,          
+        status_id:status.id)
 
   (rand(0..2)).times do
     Staff.create!(name: Faker::Name.name,
@@ -65,7 +68,8 @@ Status.delete_all
     #         end
     #       end
     #     end
-      # end
+       end
+      end
     end
   end
 end

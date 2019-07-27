@@ -15,14 +15,12 @@
   <table class="table border bg-white">
     <thead>
       <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
         <th scope="col">Email</th>
         <th scope="col">Last Sign in</th>
       </tr>
     </thead>
-
-
-
-
     <tbody>
       <tr>
         <% @staffs.each do |staff| %>
@@ -31,11 +29,16 @@
             style="width:30px;">
             TI
           </div>
+        <td>
           <%= link_to staff.name, edit_staff_path(staff), class: "text-dark" %>
-          <% end %>
+        </td>
+        <td>
+          <%= link_to staff.last_name, edit_staff_path(staff), class: "text-dark" %>
+        </td>
+
+        <% end %>
         </th>
-        <td>tsutsui@example.com</td>
-        <td>2 months ago</td>
+
       </tr>
       <tr>
         <th class="d-flex align-items-center" scope="row">
