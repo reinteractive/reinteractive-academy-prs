@@ -22,6 +22,8 @@ class IdeasController < ApplicationController
   def edit
     @idea = Idea.find(params[:id]) 
     @staffs = Staff.all
+    customer_feedback
+    @feedback = Feedback.find(params[:id])
   end
 
   # def update

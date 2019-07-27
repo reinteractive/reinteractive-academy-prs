@@ -19,16 +19,22 @@
         Sometimes a user will submit feedback, however there isn't enough...
       </p>
     </div>
+ <% @customer_feedback.each do |c| %>
     <div class="p-3 d-flex align-items-center">
       <div class="bg-success text-white text-center rounded p-1 mr-3"
            style="width:30px;">
-        HI
+        HI  <% c.initials %>
       </div>
       <p class="mb-0">
-        <strong>Henry Itondo</strong> <span class="text-muted">2 days ago</span><br>
+        <strong>Henry Itondo
+           <% c.name %>
+        </strong> 
+        <span class="text-muted">2 days ago</span><br>
         Would be great if we could speak with a customer after they have submitted...
+          <% c.feedback %>
       </p>
     </div>
+      <% end %>
   </div>
 
   <div class="tab-pane fade" id="customers" role="tabpanel" aria-labelledby="customers-tab">
@@ -52,3 +58,4 @@
     </div>
   </div>
 </div>
+ 
