@@ -22,20 +22,11 @@ class IdeasController < ApplicationController
   def edit
     @idea = Idea.find(params[:id]) 
     @staffs = Staff.all
-    customer_feedback
-    @feedback = Feedback.find(params[:id])
+     
   end
 
-  # def update
-  #   @idea = Idea.find(params[:id]) 
-  #   @staffs = Staff.all
 
-  #     if @idea.update_attributes(idea_params)
-  #       redirect_to ideas_path
-  #     else
-  #       render "edit"
-  #     end
-  #   end
+  # POST CUSTOMER FEEDBACK FOR IDEA
 
     def update
       @idea = Idea.find(params[:id])

@@ -1,8 +1,7 @@
 require 'faker'
 # Customer.delete_all
 Staff.delete_all
-
-
+Customer.delete_all
 Idea.delete_all
 # Feedback.delete_all
 Status.delete_all
@@ -37,13 +36,16 @@ Status.delete_all
                                 # invitation_sent_at: Faker::Date.between(200.days.ago, Date.today),
                                 # invitation_accepted_at: Faker::Date.between(200.days.ago, Date.today)
                           
-   
-  (rand(0..2)).times do
-    Status.create!(stage: (rand(0..2)).times do
-        planned: 0,
-        release: 1,
-        building: 2,          
-        status_id:status.id)
+2.times do
+  customer = Customer.create!(name: Faker::Name.first_name,
+                              feedback: Faker::Company.catch_phrase)
+
+  # (rand(0..2)).times do
+  #   Status.create!(stage: (rand(0..2)).times do
+  #       planned: 0,
+  #       release: 1,
+  #       building: 2,          
+  #       status_id:status.id)
 
   (rand(0..2)).times do
     Staff.create!(name: Faker::Name.name,
@@ -68,7 +70,7 @@ Status.delete_all
     #         end
     #       end
     #     end
-       end
+        # end
       end
     end
   end

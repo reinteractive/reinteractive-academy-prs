@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :statuses,    only: [:edit]
 
   get '/idea_staffs', to: 'idea#staff'
+  # get '/feedbacks/:id', to: 'ideas#edit'
 
   # scope module: 'users' do
   #    resources :customer,  :only => [:index, :edit, :new]
