@@ -21,15 +21,20 @@ class IdeasController < ApplicationController
 
   def edit
     @idea = Idea.find(params[:id]) 
+    @customers = Customer.all
+    @categories = Category.all
+    # @customer_feedback = @idea.customers.find(params[:id]) 
     @staffs = Staff.all
      
   end
 
 
-  # POST CUSTOMER FEEDBACK FOR IDEA
+  # POST CUSTOMER FEEDBACK 
+
 
     def update
       @idea = Idea.find(params[:id])
+      @customer_feedback = @idea.customers.find(params[:id]) 
         if @idea.update(idea_params)
           redirect_to ideas_path
         else
