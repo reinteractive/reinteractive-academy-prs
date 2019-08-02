@@ -1,10 +1,10 @@
 require 'faker'
 
 Staff.delete_all
-# Customer.delete_all
-# Status.delete_all
-# Category.delete_all
-# Idea.delete_all
+Customer.delete_all
+Status.delete_all
+Category.delete_all
+Idea.delete_all
 
 
 2.times do
@@ -41,18 +41,20 @@ end
                         idea_id: :idea_id)
 end
 
-Status.create!(stage: :planned)
-Status.create!(stage: :release)
-# Status.create!(stage: :awaiting_feedback)  
-# Status.create!(stage: :under_review)
-Status.create!(stage: :building)
+2.times do 
+  Status.create!(stage: :planned)
+  Status.create!(stage: :release)
+  # Status.create!(stage: :awaiting_feedback)  
+  # Status.create!(stage: :under_review)
+  Status.create!(stage: :building)
+end
  
 def random_status
   Status.order('RANDOM()').first
 end
 
-# 5.times do |n|
-#   Idea.create(title: "Idea ##{n}", status_id: random_status)
-# end
+5.times do |n|
+  Idea.create(title: "Idea ##{n}", status_id: random_status, staff_id: random_status)
+end
 
 

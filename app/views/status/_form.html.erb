@@ -1,21 +1,20 @@
 <div class="card">
+<%= form_for ([@idea, @status]) do |f| %>
   <form>
     <div class="card-body">
-
-      <div class="form-group">
-        <label for="select1">Status</label>
-        <select class="custom-select" id="select1">
-          <option value="1" selected>PLANNED</option>
-          <option value="2">RELEASE</option>
-          <option value="3">BUILDING</option>
-        </select>
+      <div class="card">
+    <%#= form_for @status do |f| %>
+        <div class="card-body">
+          <div class="form-group">
+            <label for="select1">Initial Status</label>
+            <%= f.collection_select :id, Status.all, :id, :stage,{}, class: "form-control" %>
+          </div>
+        </div>
       </div>
-
       <div class="form-group">
         <label for="exampleTextarea">Your Message</label>
-        <textarea id="exampleTextarea" class="form-control"></textarea>
-      </div>
-
+        <%= f.text_field :message, class:"form-control" %>
+       </div>
       <div class="custom-control custom-switch">
         <input type="checkbox" class="custom-control-input" id="customSwitch1">
         <label class="custom-control-label" for="customSwitch1">
@@ -27,8 +26,14 @@
     <div class="card-footer bg-white">
       <div class="text-right">
         <%= link_to "Cancel", ideas_path, class: "btn btn-light" %>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <%= f.submit class: "btn btn-primary" %>
+         
       </div>
     </div>
   </form>
+<% end %>
 </div>
+
+
+
+ 

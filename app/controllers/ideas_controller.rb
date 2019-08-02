@@ -23,9 +23,10 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id]) 
     @customers = Customer.all
     @categories = Category.all
-    # @customer_feedback = @idea.customers.find(params[:id]) 
+    status = Status.find(params[:id])
+    @idea_status = @idea.statuses
     @staffs = Staff.all
-     
+    @status = Status.find(params[:id])
   end
 
 
@@ -34,7 +35,8 @@ class IdeasController < ApplicationController
 
     def update
       @idea = Idea.find(params[:id])
-      @customer_feedback = @idea.customers.find(params[:id]) 
+        @customers = Customer.find(params[:id])
+       @idea_status
         if @idea.update(idea_params)
           redirect_to ideas_path
         else
@@ -52,6 +54,6 @@ class IdeasController < ApplicationController
 
 
   def idea_params
-    params.require(:idea).permit(:title, :staff_id, :description)
+    params.require(:idea).permit(:title, :staff_id, :description, :status_id, :stage, :description)
   end
 end
