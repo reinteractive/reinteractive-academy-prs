@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 # get '/feedbacks/:id', to: 'ideas#edit'
 
   resources :ideas do
-    resources :status, only: [:edit, :update], controller: 'ideas/statuses'
+    resources :status, only: [:index, :edit, :show, :update], controller: 'ideas/statuses'
   end
 
-  root 'portal#index'
+
+root 'portal#index'
 end

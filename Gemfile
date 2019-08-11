@@ -48,6 +48,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
+gem 'pry', '~> 0.12.2'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -57,6 +58,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'meta_request'
+  gem 'pry-rails'
 end
 
 group :test do

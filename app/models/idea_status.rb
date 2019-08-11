@@ -1,0 +1,2 @@
+class IdeaStatus < ApplicationRecord
+end
