@@ -46,11 +46,11 @@ end
 end
 
 5.times do 
-  IdeaStatus.create!(idea: Idea.order('RANDOM()').first,
-                      status: Status.order('RANDOM()').first)
+  IdeaStatus.create!(idea_id: Idea.order('RANDOM()').first,
+                      status_id: Status.order('RANDOM()').first)
 end
 
- 
+
 # def random_status
 #   Status.order('RANDOM()').first 
 # end 
