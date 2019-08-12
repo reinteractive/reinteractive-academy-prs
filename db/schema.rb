@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_024603) do
+ActiveRecord::Schema.define(version: 2019_08_11_233311) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -26,13 +26,19 @@ ActiveRecord::Schema.define(version: 2019_08_08_024603) do
     t.integer "idea_id"
   end
 
+  create_table "idea_statuses", force: :cascade do |t|
+    t.integer "idea_id"
+    t.integer "status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "ideas", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
     t.integer "staff_id"
-    t.integer "status_id"
     t.integer "customer_id"
   end
 
@@ -53,7 +59,6 @@ ActiveRecord::Schema.define(version: 2019_08_08_024603) do
     t.datetime "updated_at", null: false
     t.string "message"
     t.integer "staff_id"
-    t.integer "idea_id"
   end
 
 end

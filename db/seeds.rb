@@ -1,31 +1,28 @@
 require 'faker'
 
 Staff.delete_all
+Idea.delete_all
 Customer.delete_all
 Status.delete_all
 Category.delete_all
-Idea.delete_all
 
 
 2.times do
   category = Category.create!(name: Faker::Lorem.words(4))
 end
 
-
-                              
-
-2.times do
+5.times do
   customer = Customer.create!(name: Faker::Name.first_name,
                               feedback: Faker::Company.catch_phrase)
 end 
 
 
-2.times do
+
+5.times do
   idea = Idea.create!(title: Faker::Company.catch_phrase,
-                      customer_id: :customer_id)
+                      description:  Faker::Company.catch_phrase)
                                 # email: Faker::Internet.free_email,
                                 # password: 'hello123',
-                                # bio: Faker::Company.catch_phrase,
                                 # sign_in_count: Faker::Number.number(2),
                                 # current_sign_in_at: Faker::Time.between(2.days.ago, Time.now),
                                 # last_sign_in_at: Faker::Time.between(2.days.ago, Time.now),
@@ -36,25 +33,62 @@ end
                                 # invitation_accepted_at: Faker::Date.between(200.days.ago, Date.today))
 end
 
-2.times do
-  staff = Staff.create!(name: Faker::Name.first_name,
-                        idea_id: :idea_id)
-end
 
-2.times do 
+
+
+
+5.times do 
   Status.create!(stage: :planned)
   Status.create!(stage: :release)
   # Status.create!(stage: :awaiting_feedback)  
   # Status.create!(stage: :under_review)
   Status.create!(stage: :building)
 end
- 
-def random_status
-  Status.order('RANDOM()').first
+
+5.times do 
+  IdeaStatus.create!(idea: Idea.order('RANDOM()').first,
+                      status: Status.order('RANDOM()').first)
 end
 
-5.times do |n|
-  Idea.create(title: "Idea ##{n}", status_id: random_status, staff_id: random_status)
-end
+ 
+# def random_status
+#   Status.order('RANDOM()').first 
+# end 
+
+
+# def random_idea
+#   Idea.order('RANDOM()').first.id
+# end
+
+
+# def random_staff
+#   Staff.order('RANDOM()').first.id
+# end
+
+# 5.times do |n|
+#   Idea.create(title: "Idea ##{n}", status_id: random_status, staff_id: random_staff)
+# end
+
+
+
+
+# 5.times do
+#   staff = Staff.create!(name: Faker::Name.first_name,
+#                         last_name: Faker::Name.last_name,
+#                         email: Faker::Internet.free_email,
+#                         idea_id: random_idea)
+# end
+
+
+# 5.times do |n|
+#   Staff.create(name: "Staff ##{n}", idea_id: random_idea, status_id: random_status)
+# end
+
+
+
+
+
+
+
 
 
