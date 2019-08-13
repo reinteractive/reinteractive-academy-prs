@@ -11,16 +11,20 @@ Category.delete_all
   category = Category.create!(name: Faker::Lorem.words(4))
 end
 
-5.times do
-  customer = Customer.create!(name: Faker::Name.first_name,
-                              feedback: Faker::Company.catch_phrase)
-end 
+# 5.times do
+#   customer = Customer.create!(name: Faker::Name.first_name,
+#                               feedback: Faker::Company.catch_phrase)
+# end 
 
 
 
 5.times do
   idea = Idea.create!(title: Faker::Company.catch_phrase,
                       description:  Faker::Company.catch_phrase)
+  5.times do
+                      idea.customers.create!(
+                      name: Faker::Name.first_name,
+                      feedback: Faker::Company.catch_phrase)
                                 # email: Faker::Internet.free_email,
                                 # password: 'hello123',
                                 # sign_in_count: Faker::Number.number(2),
@@ -31,8 +35,8 @@ end
                                 # invitations_count: (rand(9)+1).to_i,
                                 # invitation_sent_at: Faker::Date.between(200.days.ago, Date.today),
                                 # invitation_accepted_at: Faker::Date.between(200.days.ago, Date.today))
-end
-
+  end
+end 
 
 
 
@@ -49,6 +53,18 @@ end
   IdeaStatus.create!(idea_id: Idea.order('RANDOM()').first,
                       status_id: Status.order('RANDOM()').first)
 end
+
+
+5.times do
+  staff = Staff.create!(name: Faker::Name.first_name,
+                        last_name: Faker::Name.last_name,
+                        email: Faker::Internet.free_email,
+                        idea_id: Idea.order('RANDOM()').first)
+end
+
+
+
+
 
 
 # def random_status
@@ -68,17 +84,6 @@ end
 # 5.times do |n|
 #   Idea.create(title: "Idea ##{n}", status_id: random_status, staff_id: random_staff)
 # end
-
-
-
-
-# 5.times do
-#   staff = Staff.create!(name: Faker::Name.first_name,
-#                         last_name: Faker::Name.last_name,
-#                         email: Faker::Internet.free_email,
-#                         idea_id: random_idea)
-# end
-
 
 # 5.times do |n|
 #   Staff.create(name: "Staff ##{n}", idea_id: random_idea, status_id: random_status)

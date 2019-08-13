@@ -2,7 +2,8 @@
 
 class Idea < ApplicationRecord
   belongs_to :staff, optional: true
-  belongs_to :customer, optional: true
+  
+  has_many :customers
   has_many :idea_statuses
   has_many :statuses, through: :idea_statuses
 
@@ -18,5 +19,5 @@ class Idea < ApplicationRecord
 
   accepts_nested_attributes_for :statuses
   accepts_nested_attributes_for :staff
-  accepts_nested_attributes_for :customer
+  # accepts_nested_attributes_for :customer
 end
