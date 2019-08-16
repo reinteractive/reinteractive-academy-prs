@@ -1,71 +1,113 @@
 require 'faker'
 
+puts 'Cleanup started...'
 Staff.delete_all
 Idea.delete_all
 Customer.delete_all
 Status.delete_all
 Category.delete_all
+IdeaStatus.delete_all
+puts 'Cleanup done!'
 
+puts 'Adding categories...'
+Category.create!(name: 'Feature Requests')
+Category.create!(name: 'Bugs')
+puts 'Categories done!'
 
-2.times do
-  category = Category.create!(name: Faker::Lorem.words(4))
+puts 'Adding statuses...'
+Status.create!(stage: 'Planned')
+Status.create!(stage: 'Released')
+Status.create!(stage: 'Awaiting Feedback')
+Status.create!(stage: 'Building')
+Status.create!(stage: 'Under Review')
+Status.create!(stage: 'Released')
+puts 'Statuses done!'
+
+puts 'Adding ideas...'
+5.times do |number|
+  idea = Idea.create(
+    title: "Item ##{number}",
+    description: Faker::Company.catch_phrase
+  )
+
+  puts 'Adding customers to idea...'
+  3.times do
+    idea.customers.create!(name: Faker::Name.first_name)
+  end
+  puts 'Customers done!'
+
+  puts 'Adding statuses to an idea...'
+  idea.idea_statuses.create!(status: Status.order('RANDOM()').first)
+  puts 'Statuses done!'
 end
+puts 'Ideas done!'
+
+puts 'Adding staff...'
+Staff.create!(
+  name: 'Owner',
+  email: 'owner@sprout.localhost'
+)
+
+Staff.create!(
+  name: 'Support Staff #1',
+  email: 'support+1@sprout.localhost'
+)
+puts 'Staff done!'
+
+
+
+
+
 
 # 5.times do
-#   customer = Customer.create!(name: Faker::Name.first_name,
-#                               feedback: Faker::Company.catch_phrase)
+#  customer = Customer.create!(name: Faker::Name.first_name,
+#                              feedback: Faker::Company.catch_phrase)
 # end 
 
+# 5.times do
+#   idea = Idea.create!(title: Faker::Company.catch_phrase,
+#                       description:  Faker::Company.catch_phrase)
+  # 5.times do
+  #   idea = Idea.create!(title: Faker::Company.catch_phrase,
+  #                       description:  Faker::Company.catch_phrase)
+  #   5.times do
+  #     idea.customers.create!(
+  #                   name: Faker::Name.first_name,
+  #                   feedback: Faker::Company.catch_phrase)
+  #                   # email: Faker::Internet.free_email,
+  #                   # password: 'hello123',
+  #                   # sign_in_count: Faker::Number.number(2),
+  #                   # current_sign_in_at: Faker::Time.between(2.days.ago, Time.now),
+  #                   # last_sign_in_at: Faker::Time.between(2.days.ago, Time.now),
+  #                   # current_sign_in_ip:Faker::Internet.ip_v4_address,
+  #                   # last_sign_in_ip:Faker::Internet.ip_v4_address,
+  #                   # invitations_count: (rand(9)+1).to_i,
+  #                   # invitation_sent_at: Faker::Date.between(200.days.ago, Date.today),
+  #                   # invitation_accepted_at: Faker::Date.between(200.days.ago, Date.today))
+  #                   puts 'completed Ideas"
+  #   end
+  #     idea.statuses.create!(stage: :planned)
+  #     idea.statuses.create!(stage: :release)
+  #     idea.statuses.create!(stage: :building) 
+  # end
+
+  
+
+  
 
 
-5.times do
-  idea = Idea.create!(title: Faker::Company.catch_phrase,
-                      description:  Faker::Company.catch_phrase)
-  5.times do
-                      idea.customers.create!(
-                      name: Faker::Name.first_name,
-                      feedback: Faker::Company.catch_phrase)
-                                # email: Faker::Internet.free_email,
-                                # password: 'hello123',
-                                # sign_in_count: Faker::Number.number(2),
-                                # current_sign_in_at: Faker::Time.between(2.days.ago, Time.now),
-                                # last_sign_in_at: Faker::Time.between(2.days.ago, Time.now),
-                                # current_sign_in_ip:Faker::Internet.ip_v4_address,
-                                # last_sign_in_ip:Faker::Internet.ip_v4_address,
-                                # invitations_count: (rand(9)+1).to_i,
-                                # invitation_sent_at: Faker::Date.between(200.days.ago, Date.today),
-                                # invitation_accepted_at: Faker::Date.between(200.days.ago, Date.today))
-  end
-end 
+# 5.times do 
+#   Status.create!(stage: :planned)
+#   Status.create!(stage: :release)
+#   # Status.create!(stage: :awaiting_feedback)  
+#   # Status.create!(stage: :under_review)
+#   Status.create!(stage: :building)
+# end
 
-
-
-
-5.times do 
-  Status.create!(stage: :planned)
-  Status.create!(stage: :release)
-  # Status.create!(stage: :awaiting_feedback)  
-  # Status.create!(stage: :under_review)
-  Status.create!(stage: :building)
-end
-
-5.times do 
-  IdeaStatus.create!(idea_id: Idea.order('RANDOM()').first,
-                      status_id: Status.order('RANDOM()').first)
-end
-
-
-5.times do
-  staff = Staff.create!(name: Faker::Name.first_name,
-                        last_name: Faker::Name.last_name,
-                        email: Faker::Internet.free_email,
-                        idea_id: Idea.order('RANDOM()').first)
-end
-
-
-
-
-
+# 5.times do 
+#   IdeaStatus.create!(idea_id: Idea.order('RANDOM()').first,
+#                       status_id: Status.order('RANDOM()').first)
+# end
 
 # def random_status
 #   Status.order('RANDOM()').first 
