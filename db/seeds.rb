@@ -32,7 +32,8 @@ puts 'Adding ideas...'
 
   puts 'Adding customers to idea...'
   3.times do
-    idea.customers.create!(name: Faker::Name.first_name)
+    idea.customers.create!(name: Faker::Name.first_name,
+                          email: Faker::Internet.free_email)
   end
   puts 'Customers done!'
 
@@ -43,15 +44,14 @@ end
 puts 'Ideas done!'
 
 puts 'Adding staff...'
-Staff.create!(
-  name: 'Owner',
-  email: 'owner@sprout.localhost'
-)
 
-Staff.create!(
-  name: 'Support Staff #1',
-  email: 'support+1@sprout.localhost'
-)
+  5.times do |staff|
+    staff = Staff.create!(name: Faker::Name.first_name,
+                          first_name: Faker::Name.first_name,
+                          email: Faker::Internet.free_email)
+  end 
+
+ 
 puts 'Staff done!'
 
 

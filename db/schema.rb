@@ -1,4 +1,4 @@
-# This file is auto-generated from the current state of the database. Instead
+<td> <%= staff.first_name %></td># This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_030844) do
+ActiveRecord::Schema.define(version: 2019_08_19_085908) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_030844) do
     t.datetime "updated_at", null: false
     t.string "feedback"
     t.integer "idea_id"
+    t.string "email"
   end
 
   create_table "idea_statuses", force: :cascade do |t|
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_030844) do
     t.integer "status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_status"
   end
 
   create_table "ideas", force: :cascade do |t|
@@ -50,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_030844) do
     t.string "email"
     t.string "password"
     t.integer "status_id"
+    t.string "first_name"
   end
 
   create_table "statuses", force: :cascade do |t|
