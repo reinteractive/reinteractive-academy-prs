@@ -6,6 +6,9 @@ class Idea < ApplicationRecord
   has_many :customers
   has_many :idea_statuses
   has_many :statuses, through: :idea_statuses
+  
+  has_many :idea_categories
+  has_many :categories, through: :idea_categories
 
 
 
