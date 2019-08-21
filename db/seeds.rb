@@ -37,6 +37,18 @@ puts 'Adding ideas...'
   end
   puts 'Customers done!'
 
+   puts 'Adding categores to idea...'
+  3.times do
+    idea.categories.create!(name: Faker::Name.first_name)
+                          
+  end
+  puts 'Customers done!'
+
+
+
+
+
+
   puts 'Adding statuses to an idea...'
   idea.idea_statuses.create!(status: Status.order('RANDOM()').first)
   puts 'Statuses done!'

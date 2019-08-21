@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_040921) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+  
   create_table "idea_statuses", force: :cascade do |t|
     t.integer "idea_id"
     t.integer "status_id"
