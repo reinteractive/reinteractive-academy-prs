@@ -10,6 +10,9 @@ class Idea < ApplicationRecord
   has_many :idea_categories
   has_many :categories, through: :idea_categories
 
+  has_many :assignedfeedbacks
+  has_many :feedbacks, through: :assignedfeedbacks
+
 
   def current_status
     statuses.order(:created_at).last&.stage
@@ -20,4 +23,5 @@ class Idea < ApplicationRecord
   accepts_nested_attributes_for :statuses
   accepts_nested_attributes_for :staff
   accepts_nested_attributes_for :categories
+  accepts_nested_attributes_for :feedbacks
 end
