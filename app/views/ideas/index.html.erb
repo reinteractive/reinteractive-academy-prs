@@ -13,7 +13,7 @@
   <table class="table border bg-white">
     <thead>
       <tr>
-        <div scope="col">Title</div>
+        <th scope="col">Title</th>
         <th scope="col">Status</th>
         <th scope="col">Nice</th>
         <th scope="col">Important</th>
@@ -22,23 +22,25 @@
       </tr>
     </thead>
     <tbody>
+    <% @ideas.each do |idea| %>
       <tr>
-        <% @ideas.each do |i| %>
-        <th class="d-flex align-items-center" scope="row">
-          <div class="bg-success text-white text-center rounded p-1 mr-2"
-            style="width:30px;">
+        <td class="d-flex align-items-center" scope="row">
+          <div class="bg-success text-white text-center rounded p-1 mr-2" style="width:30px;">
             TI
           </div>
-          <%= link_to i.title, edit_idea_path(i.id), class: "text-dark" %>
-          <% end %>
-        <td class="text-info">
-          <i class="fas fa-circle"></i> PLANNED <%#= i.status %>
+            <%= link_to idea.title, edit_idea_path(idea), class: "text-dark" %>
         </td>
-        <td>2</td>
+        
+        <td class="text-info">
+          <i class="fas fa-circle"><%= idea.current_status %></i> 
+        </td>     
+        <td><%#= idea.vote.nice %></td>
         <td>2</td>
         <td>2</td>
         <td>2</td>
       </tr>
+    <% end %>
     </tbody>
   </table>
 </section>
+

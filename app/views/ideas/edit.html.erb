@@ -13,7 +13,7 @@
         <%= render "feedback" %>
       </div>
     </div>
-    <div class="col">
+    <div class="col-4">
       <div class="border-bottom">
         <%= render "meta" %>
       </div>
@@ -21,14 +21,13 @@
       <div class="my-3">
         <p class="d-flex justify-content-between">
           <strong>Status</strong>
-          <%= link_to "Change status", edit_idea_status_path(@idea_status) %>
+          <%= link_to "Change status", edit_idea_status_path(@idea, @status) %>
         </p>
 
         <p class="text-secondary p-2 bg-white border">
-          <i class="fas fa-circle"></i> UNDER REVIEW
+          <i class="fas fa-circle"></i>
+          <%= @status.stage %>
         </p>
-
-        
       </div>
 
       <div class="border-bottom my-3">

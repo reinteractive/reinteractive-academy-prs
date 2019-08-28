@@ -3,7 +3,7 @@
     <div class="card-body">
     <div class="form-group">
       <label for="select1">Initial Status</label>
-      <%= f.collection_select :status_id, Status.all, :id, :stage,{}, class: "form-control" %>
+      <%= f.collection_select :idea_status_ids, Status.all, :id, :stage,{}, class: "form-control" %>
       <div class="select2">Assigned to</div>
       <%= f.collection_select :staff_id, Staff.all, :id, :name,{}, class: "form-control" %>
       <div class="form-group">

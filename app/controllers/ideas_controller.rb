@@ -3,6 +3,7 @@
 class IdeasController < ApplicationController
   def index
     @ideas = Idea.all
+    @status = Status.all
   end
 
   def new
@@ -20,40 +21,33 @@ class IdeasController < ApplicationController
   end
 
   def edit
-    @idea = Idea.find(params[:id]) 
-    @customers = Customer.all
-    @categories = Category.all
-    status = Status.find(params[:id])
-    @idea_status = @idea.statuses
-    @staffs = Staff.all
+    @idea = Idea.find(params[:id])
     @status = Status.find(params[:id])
+    @categories = Category.all
+    @staffs = Staff.all
+    @customer = Customer.all.limit(3)
+    # @ideas_of_staff = @idea.staff.find(params[:staff])
   end
 
 
-  # POST CUSTOMER FEEDBACK 
-
-
-    def update
-      @idea = Idea.find(params[:id])
-        @customers = Customer.find(params[:id])
-       @idea_status
-        if @idea.update(idea_params)
-          redirect_to ideas_path
-        else
-          render 'edit'
-      end
+  def update
+    @idea = Idea.find(params[:id])
+    @ideas_of_customers = @idea.customers.find(params[:id])
+    @status = Status.find(params[:id])
+    if @status && @idea.update(idea_params)
+      redirect_to ideas_path
+    else
+      render 'edit'
     end
-
-
+  end
 
   def show
-    @idea = idea.find(params[:id])
+    @idea = Idea.find(params[:id])
   end
 
   private
 
-
   def idea_params
-    params.require(:idea).permit(:title, :staff_id, :description, :status_id, :stage, :description)
+    params.require(:idea).permit(:title, :staff_id, :description, :status_id, :stage)
   end
 end
