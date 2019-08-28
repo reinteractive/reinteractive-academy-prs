@@ -5,17 +5,17 @@
 </p>
 <p>
   <i class="fas fa-clock mr-2"></i>
-  Customer: <%= link_to "Lucy Miller", edit_customer_path(1) %>
+  Customer: <%= link_to @feedback.customer.name, edit_customer_path %>
 </p>
 <p>
   <i class="fas fa-clock mr-2"></i>
-  lucy+miller@example.com
+  <%= @feedback.customer.email %>
 </p>
 <p>
   <i class="fas fa-ticket-alt mr-2"></i>
-  ID: 5665
+ <%= @feedback.customer.id %>
 </p>
 <p>
   <i class="fas fa-clock mr-2"></i>
-  Added 2 hours ago
+ <%= @feedback.customer.updated_at %>
 </p>

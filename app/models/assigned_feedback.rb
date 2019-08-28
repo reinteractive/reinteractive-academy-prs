@@ -1,4 +1,4 @@
 class AssignedFeedback < ApplicationRecord
-  belongs_to :feedback
-  belongs_to :idea
+  belongs_to :feedback, optional: true
+  belongs_to :idea, optional: true
 end

@@ -10,17 +10,17 @@
       </tr>
     </thead>
     <tbody>
+      <% @feedbacks.each do |feedback| %>
       <tr>
         <th class="d-flex align-items-center" scope="row">
-          <div class="bg-secondary text-white text-center rounded p-1 mr-2"
-               style="width:30px;">
-            LM
+          <div class="bg-secondary text-white text-center rounded p-1 mr-2"style="width:30px;">
+            <%= feedback.customer.name.slice(0) %>
           </div>
-          Lucy Miller
+            <%= feedback.customer.name %>
         </th>
         <td class="align-middle">
-          <%= link_to feedback_path(1), class: "text-dark" do %>
-            Sometimes a user will submit feedback, however there isn't enough...
+          <%= link_to feedback_path(feedback), class: "text-dark" do %>
+            <%= feedback.description %>
           <% end %>
         </td>
         <td>
@@ -28,26 +28,7 @@
           <%= link_to "Attach", new_feedback_path, class: "btn btn-primary ml-1" %>
         </td>
       </tr>
-      <tr>
-        <th class="d-flex align-items-center" scope="row">
-          <div class="bg-success text-white text-center rounded p-1 mr-2"
-               style="width:30px;">
-            HI
-          </div>
-          Henry Itondo
-        </th>
-        <td class="align-middle">
-          <%= link_to feedback_path(1), class: "text-dark" do %>
-            Would be great if we could speak with a customer after they have submitted...
-          <% end %>
-        </td>
-        <td>
-          <%= image_tag "icons/smile", alt: "smile emoji", width: 28, height: 28 %>
-          <button type="button" class="btn btn-light ml-1" disabled>
-            <i class="fas fa-check"></i> Attached
-          </button>
-        </td>
-      </tr>
+     <% end %>
     </tbody>
   </table>
 </section>
