@@ -19,32 +19,22 @@
         <th scope="col">Votes</th>
         <th scope="col">Last Activity</th>
       </tr>
-    </thead>
+    </thead> 
     <tbody>
-      <tr>
-        <% @customers.each do |customer| %>
-        <th class="d-flex align-items-center" scope="row">
-          <div class="bg-success text-white text-center rounded p-1 mr-2"
-            style="width:30px;">
-            TI
-          </div>
-          <%= link_to customer.name, edit_customer_path(customer), class: "text-dark" %>
-          <% end %>
-        </th>
-        <td>tsutsui@example.com</td>
-        <td>2 months ago</td>
-      </tr>
+    <% @customers.each do |customer| %>
       <tr>
         <th class="d-flex align-items-center" scope="row">
-          <div class="bg-info text-white text-center rounded p-1 mr-2"
-            style="width:30px;">
-            SY
+          <div class="bg-success text-white text-center rounded p-1 mr-2" style="width:30px;">
+         <%= customer.name.slice(0) %>
           </div>
-          <%= link_to edit_customer_path(1), class: "text-dark" do %>
-          Sang Young-Il
-          <% end %>
+           <%= link_to customer.name, edit_customer_path(customer), class: "text-dark" %>
         </th>
-      </tr>
+        <td><%= customer.email %></td>
+        <td><%= customer.created_at %></td>
+         <td>votes go here</td>
+        <td><%= customer.updated_at %></td>
+      </tr>  
+      <% end %>
     </tbody>
   </table>
 </section>
