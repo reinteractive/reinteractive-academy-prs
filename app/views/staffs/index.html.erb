@@ -9,9 +9,7 @@
     <% end %>
   </div>
 </nav>
-
 <section class="container my-4">
-
   <table class="table border bg-white">
     <thead>
       <tr>
@@ -24,38 +22,20 @@
     <tbody>
       <tr>
         <% @staffs.each do |staff| %>
-        <th class="d-flex align-items-center" scope="row">
-          <div class="bg-success text-white text-center rounded p-1 mr-2"
-            style="width:30px;">
-            TI
-          </div>
-        <td>
-          <%= link_to staff.name, edit_staff_path(staff), class: "text-dark" %>
-        </td>
-        <td>
-          <%= link_to staff.last_name, edit_staff_path(staff), class: "text-dark" %>
-        </td>
-
-        <% end %>
-        </th>
-
       </tr>
       <tr>
         <th class="d-flex align-items-center" scope="row">
           <div class="bg-info text-white text-center rounded p-1 mr-2"
             style="width:30px;">
-            SY
+            <%= staff.name.slice(0) %>
           </div>
-          <%= link_to edit_staff_path(1), class: "text-dark" do %>
-          Sang Young-Il
-          <% end %>
+           <%= link_to staff.name, edit_staff_path(staff), class: "text-dark" %>
         </th>
-        <td>sang@example.com</td>
-        <td>4 months ago</td>
+        <td> <%= staff.first_name %></td>
+        <td> <%= staff.email %></td>
+        <td><%= staff.updated_at %></td>
+         <% end %>
       </tr>
     </tbody>
   </table>
-
-
-
 </section>
