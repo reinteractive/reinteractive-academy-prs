@@ -19,25 +19,14 @@
       </tr>
     </thead>
     <tbody>
+       <% @categories.each do |c| %>
       <tr>
-        <%# @categories.each do |c| %>
-        <th class="d-flex align-items-center" scope="row">
-          <div class="bg-success text-white text-center rounded p-1 mr-2"
-            style="width:30px;">
-            TI
-          </div>
-          <%#= c.name %>
-          <%# end %>
-
-        <th scope="row">Feature Requests</th>
-        <td>6</td>
-        <td>2 months ago</td>
+        <td><%= c.name %></td>      
+        
+        <td><%= c.ideas.count %></td>      
+        <td><%= c.created_at %></td>
       </tr>
-      <tr>
-        <th scope="row">Bugs</th>
-        <td>10</td>
-        <td>4 months ago</td>
-      </tr>
+        <% end %>
     </tbody>
   </table>
 </section>
