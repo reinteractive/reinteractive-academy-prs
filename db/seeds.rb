@@ -46,8 +46,10 @@ puts 'Adding Feedback...'
   puts 'Adding feedback to customer...' 
   feedback.customer = Customer.order('RANDOM()').first
   feedback.save
-end
   puts 'Feedback to customer done!'
+  
+end
+  
 
 
 

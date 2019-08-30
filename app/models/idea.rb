@@ -13,6 +13,9 @@ class Idea < ApplicationRecord
   has_many :assignedfeedbacks
   has_many :feedbacks, through: :assignedfeedbacks
 
+  has_many :feedback_ideas
+  has_many :feedbacks, through: :feedback_ideas
+
 
   def current_status
     statuses.order(:created_at).last&.stage
