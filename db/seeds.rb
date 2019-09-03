@@ -25,22 +25,33 @@ Status.create!(stage: 'Building')
 Status.create!(stage: 'Under Review')
 Status.create!(stage: 'Released')
 puts 'Statuses done!'
-  
+
+
+puts 'Adding customers'
+5.times do  
+customer = Customer.create(
+  name: Faker::Name.first_name,
+  email: Faker::Internet.free_email)
+end
+puts 'Customers done!'
+
+
 puts 'Adding ideas...'
 5.times do |number|
- idea = Idea.create(
-   title: "Item ##{number}",
-   description: Faker::Lorem.paragraph)
+  idea = Idea.create(
+    title: "Item ##{number}",
+    description: Faker::Lorem.paragraph)
+    
 
   puts 'Adding feedback to idea...'
   3.times do
     idea.feedbacks.create!(
       description: Faker::Lorem.paragraph,
-      customer_id: Customer.order('RANDOM()').first)
+      customer: Customer.order('RANDOM()').first)
   end
   puts 'Feedback to ideas done!'
 
-  
+
   # puts 'Adding staffs to idea...'
   # 3.times do
   #   idea.staffs.create!(name: Faker::Name.first_name,

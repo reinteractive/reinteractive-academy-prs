@@ -1,4 +1,4 @@
-app/views/categories/index.html.erbclass CategoriesController < ApplicationController
+class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @ideas = Idea.all
