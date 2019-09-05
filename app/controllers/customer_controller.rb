@@ -18,6 +18,7 @@ class CustomerController < ApplicationController
 
   def edit
     @customer = Customer.find(params[:id])
+    @customer_feedback = @customer.feedbacks
   end
 
   def update
@@ -32,6 +33,6 @@ class CustomerController < ApplicationController
   private
 
   def customer_params
-    params.require(:customer).permit(:name)
+    params.require(:customer).permit(:name, :surname, :email)
   end
 end
