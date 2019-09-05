@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_074352) do
+ActiveRecord::Schema.define(version: 2019_09_05_004339) do
 
   create_table "assigned_feedbacks", force: :cascade do |t|
     t.integer "idea_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_074352) do
     t.string "feedback"
     t.integer "idea_id"
     t.string "email"
+    t.string "surname"
   end
 
   create_table "feedback_ideas", force: :cascade do |t|

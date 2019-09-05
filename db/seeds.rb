@@ -31,6 +31,7 @@ puts 'Adding customers'
 5.times do  
 customer = Customer.create(
   name: Faker::Name.first_name,
+  surname: Faker::Name.last_name,
   email: Faker::Internet.free_email)
 end
 puts 'Customers done!'
