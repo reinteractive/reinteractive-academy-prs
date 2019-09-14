@@ -1,4 +1,4 @@
-require 'faker'
+life cycle of an active record objectrequire 'faker'
 
 puts 'Cleanup started...'
 Staff.delete_all
@@ -38,7 +38,7 @@ puts 'Customers done!'
 
 
 puts 'Adding ideas...'
-5.times do |number|
+7.times do |number|
   idea = Idea.create(
     title: "Item ##{number}",
     description: Faker::Lorem.paragraph)
@@ -48,7 +48,7 @@ puts 'Adding ideas...'
   3.times do
     idea.feedbacks.create!(
       description: Faker::Lorem.paragraph,
-      customer: Customer.order('RANDOM()').first)
+      customer_id: Customer.order('RANDOM()').first.id)
   end
   puts 'Feedback to ideas done!'
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_004339) do
+ActiveRecord::Schema.define(version: 2019_09_14_000506) do
 
   create_table "assigned_feedbacks", force: :cascade do |t|
     t.integer "idea_id"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2019_09_05_004339) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "feedback"
     t.integer "idea_id"
     t.string "email"
     t.string "surname"
@@ -43,7 +42,6 @@ ActiveRecord::Schema.define(version: 2019_09_05_004339) do
   end
 
   create_table "feedbacks", force: :cascade do |t|
-    t.string "string"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
