@@ -1,4 +1,4 @@
-life cycle of an active record objectrequire 'faker'
+require 'faker'
 
 puts 'Cleanup started...'
 Staff.delete_all

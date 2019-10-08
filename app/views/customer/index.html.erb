@@ -25,7 +25,7 @@
       <tr>
         <th class="d-flex align-items-center" scope="row">
           <div class="bg-success text-white text-center rounded p-1 mr-2" style="width:30px;">
-         <%= customer.name.slice(0) %>
+         <%= customer.name[0..1] %>
           </div>
            <%= link_to customer.name, edit_customer_path(customer), class: "text-dark" %>
         </th>
