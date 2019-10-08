@@ -21,14 +21,14 @@ class FeedbackController < ApplicationController
 
   def show
     @feedback = Feedback.find(params[:id])
+    @customer = @feedback.customer
   end
-
-
+  
   private 
 
   def feedback_params
     params.
       require(:feedback).
-      permit(:description, :customer_id, customer_attribute: [ :name, :feedback ])
+      permit(:description, :customer_id, customer_attributes: [:name, :feedback, :email])
   end
 end

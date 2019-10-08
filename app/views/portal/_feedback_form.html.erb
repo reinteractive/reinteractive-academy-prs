@@ -20,14 +20,13 @@
     <div class="card-body bg-light">
       <div class="form-group">
         <label for="exampleText1">Why do you need this?</label>
-        <%= f.text_area :description, placeholder: "(Any context you provide will help us make this product better for you)", class: "form-control" %>
+        <%= f.text_area :description, placeholder: "(Anyss context you provide will help us make this product better for you)", class: "form-control" %>
       </div>
-
+    <%= f.fields_for :customer do |fa| %>
       <div class="form-group">
-        <label for="exampleEmail">Email</label>
-         <%#= @feedback.customer.email %>
-        <input type="email" id="exampleEmail" class="form-control" placeholder="lucy.miller@example.com">
-      </div>
+         <%= fa.text_field :email, class: "form-control", placeholder: "lucyss.miller@example.com" %>
+       </div>
+      <% end %>
     </div>
 
 
@@ -36,7 +35,7 @@
         <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#feedbackForm">
           Cancel
         </button>
-         <%= link_to "Save", feedback_index_path, class: "btn btn-primary" %>
+        <%= f.submit "Save", class: "btn btn-primary" %>
       </div>
     </div>
   </div>

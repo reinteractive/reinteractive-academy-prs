@@ -4,6 +4,7 @@ class PortalController < ApplicationController
 
   def index
     @feedback = Feedback.new
+   @customer = @feedback.build_customer
   end
 
   
