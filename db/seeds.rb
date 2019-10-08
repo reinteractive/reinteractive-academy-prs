@@ -40,7 +40,7 @@ puts 'Customers done!'
 puts 'Adding ideas...'
 7.times do |number|
   idea = Idea.create(
-    title: "Item ##{number}",
+    title:  Faker::Commerce.product_name,
     description: Faker::Lorem.paragraph)
     
 

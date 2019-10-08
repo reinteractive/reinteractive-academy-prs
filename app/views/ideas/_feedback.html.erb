@@ -15,16 +15,18 @@
       <div class="p-3 d-flex align-items-center">
       <div class="bg-success text-white text-center rounded p-1 mr-3"
            style="width:30px;">
-        IGM  <%#= c.slice_initials_of_minion %>
+        <%= c.name[0..1] %>
         
       </div>
       <p class="mb-0">
         <strong>
            <%= c.name %>
         </strong> 
-
+        
         <span class="text-muted"><%#= c.updated_at %></span><br>
-           <%= c.feedback %>
+           <% c.feedbacks.each do |feedback| %>
+            <%= feedback.description %>  
+           <% end %>
       </p>
       </div>
       <% end %>
